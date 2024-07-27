@@ -1,18 +1,24 @@
 const express = require('express');
 const router = express.Router();
 
-const {home, loginUser, registerUser, logoutUser, profileUser} = require('../controllers/userControls');
+const {loginUser, registerUser, logoutUser, profileUser} = require('../controllers/userControls');
+
 router.get("/", function(req,res){
     res.render("home");
 });
+
 router.get("/register", function(req,res){
     res.render("register");
 });
+
 router.post("/registerUser", registerUser);
-router.get("/logout", function(req,res){
-    res.render("home");
+
+router.get("/login", function(req,res){
+    res.render("login");
 });
-router.get("/profile", function(req,res){
-    res.render("home");
-});
+
+router.post("/loginuser", loginUser);
+
+router.get("/logout", logoutUser);
+
 module.exports = router;

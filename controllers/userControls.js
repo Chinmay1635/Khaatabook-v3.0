@@ -6,6 +6,7 @@ const generateToken = require('../utils/generateToken');
 module.exports.registerUser = async function (req, res) {
     let { username, name, password, email } = req.body;
     try {
+        //Checking is user is already registered or not
         let user = await userModel.findOne({ email: email });
         if (user) {
             return res.send("You are already registered. Please log in");
@@ -32,8 +33,54 @@ module.exports.registerUser = async function (req, res) {
             secure: true,
             maxAge: 30 * 24 * 60 * 60 * 1000,
         });
+
         res.render("user-home");
     } catch (error) {
         res.send("Something went wrong try again");
     }
+}
+
+module.exports.loginUser = async function (req, res) {
+    let { username, password } = req.body;
+    try {
+        //finding user in database
+        let user = await userModel.findOne({ username });
+
+        //checking user exists or not
+        if (!user) {
+            return res.send("User not found! Register first.");
+        }
+
+        //if user exists then validating his password
+        let validateUser = await bcrypt.compare(password, user.password);
+        if (validateUser) {
+            //Token generation
+            let token = generateToken(user.email);
+
+            //Setting cookie into browser
+            res.cookie("token", token, {
+                httpOnly: true,
+                secure: true,
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+            });
+
+            // res.render("user-home");
+            res.send("Loggin successfull");
+
+        } else {
+            res.send("username or password is incorrect");
+        }
+    } catch (error) {
+        res.send(error.message);
+    }
+}
+
+module.exports.logoutUser = async function(req,res){
+    //Deleting cookie
+    res.cookie("token", "", {
+        httpOnly: true,
+        secure: true,
+    });
+
+    res.send("Loged out successfull");
 }
