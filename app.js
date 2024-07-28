@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 const db = require('./config/mongoose');
-const userModel = require('./models/user');
+const {userModel, userValidationSchema} = require('./models/user');
 const homeRoute = require('./routes/home');
 
 app.set('view engine', 'ejs');
