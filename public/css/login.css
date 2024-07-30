@@ -1,0 +1,154 @@
+@font-face {
+    font-family: gilroy;
+    src: url(/fonts/Gilroy-Regular.ttf);
+}
+
+body {
+    font-family: gilroy;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
+  *{
+    font-family: gilroy;
+  }
+  
+  header {
+    background: #007bff;
+    padding: 1rem 0;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  header .logo {
+    height: 50px;
+  }
+  
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px);
+  }
+  
+  .login-container {
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .login-container h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .login-container p {
+    margin-bottom: 2rem;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-container label {
+    width: 100%;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-container button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background: #0056b3;
+  }
+  
+  .login-container .signup-link {
+    margin-top: 1rem;
+  }
+  
+  .login-container .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  footer {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header nav a {
+      margin: 0.5rem 0;
+    }
+  
+    main {
+      height: auto;
+      padding: 2rem 0;
+    }
+  
+    .login-container {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 1.5rem;
+    }
+  
+    .login-container input {
+      padding: 0.5rem;
+    }
+  
+    .login-container button {
+      padding: 0.5rem 1rem;
+    }
+  }
+  

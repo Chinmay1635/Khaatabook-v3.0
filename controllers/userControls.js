@@ -4,7 +4,7 @@ const generateToken = require('../utils/generateToken');
 
 
 module.exports.registerUser = async function (req, res) {
-    let { username, name, password, email } = req.body;
+    let { username, name, email, password } = req.body;
     try {
          //Validating user data with joi
          let err = userValidationSchema({username, name, password, email});
@@ -32,7 +32,7 @@ module.exports.registerUser = async function (req, res) {
         });
 
         //Token generation
-        let token = generateToken({ email });
+        let token = generateToken(user.email);
 
         //Setting cookie into browser
         res.cookie("token", token, {
@@ -41,17 +41,18 @@ module.exports.registerUser = async function (req, res) {
             maxAge: 30 * 24 * 60 * 60 * 1000,
         });
 
-        res.render("userHome");
+
+        res.redirect(`/home/${username}`);
     } catch (error) {
         res.send(error.message);
     }
 }
 
 module.exports.loginUser = async function (req, res) {
-    let { username, password } = req.body;
+    let { email, password } = req.body;
     try {
         //finding user in database
-        let user = await userModel.findOne({ username });
+        let user = await userModel.findOne({ email });
 
         //checking user exists or not
         if (!user) {
@@ -71,11 +72,8 @@ module.exports.loginUser = async function (req, res) {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
             });
 
-              // Removing password from user object before rendering
-        const { password, ...userWithoutPassword } = user.toObject();
-
-        res.render("userHome", { user: userWithoutPassword });
-            // res.send("Loggin successfull");
+        res.redirect(`/home/${user.username}`);
+            
 
         } else {
             res.send("username or password is incorrect");
@@ -94,3 +92,7 @@ module.exports.logoutUser = async function(req,res){
 
     res.send("Loged out successfull");
 }
+module.exports.userHome = async function(req,res){
+    res.render("userHome", {user:req.user});
+}
+

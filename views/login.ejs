@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khaatabook</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Khaatabook</title>
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <h1>Login</h1>
+  <header>
+    <div class="container">
+      <img src="/images/logo.png" alt="Khaatabook Logo" class="logo">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/signup">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2>Welcome Back!</h2>
+      <p>Please login to your account.</p>
+      <form action="/loginuser" method="post" id="login-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+      <p class="signup-link">Don't have an account? <a href="/signup">Sign up here</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Khaatabook. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/login.js"></script>
 </body>
 </html>

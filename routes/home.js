@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const cookieParser = require('cookie-parser');
 
-const {loginUser, registerUser, logoutUser, profileUser} = require('../controllers/userControls');
+const {loginUser, registerUser, logoutUser, userHome} = require('../controllers/userControls');
+const { isLoggedIn } = require('../middlewares/isLoggedIn');
 
 router.get("/", function(req,res){
     res.render("home");
 });
 
-router.get("/register", function(req,res){
+router.get("/signup", function(req,res){
     res.render("register");
 });
 
@@ -20,5 +22,7 @@ router.get("/login", function(req,res){
 router.post("/loginuser", loginUser);
 
 router.get("/logout", logoutUser);
+
+router.get("/home/:username",isLoggedIn, userHome);
 
 module.exports = router;

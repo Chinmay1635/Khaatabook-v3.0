@@ -16,6 +16,11 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+// app.use((req, res, next) => {
+//     console.log(`Request URL: ${req.originalUrl}`);
+//     next();
+// });
+
 app.use('/', homeRoute);
 
 app.listen(process.env.PORT || 3000);
