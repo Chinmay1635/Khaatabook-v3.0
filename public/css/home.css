@@ -257,12 +257,47 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F74C06", en
     align-items: center;
   }
   
-  .contact-form label {
+  /* .contact-form label {
     margin-top: 1rem;
     font-size: 1.1rem;
   }
-  
-  .contact-form input, .contact-form textarea {
+   */
+   .input-field{
+    position:relative;
+    margin-top: 1rem;
+  }
+  .input-field input{
+    width: 300px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 2px solid #9c9797;
+    background: transparent;
+    outline: none;
+    color: #111;
+    /* pointer-events: none; */
+  }
+  .input-field label{
+    position: absolute;
+    top: 50%;
+    left:15px;
+    transform: translateY(-50%);
+    color: #111;
+    font-size: 16px;
+    transition: all linear .3s;
+  }
+  input:focus{
+    border: 2px solid rgb(12, 244, 12);
+  }
+  input:focus ~ label,
+  input:valid ~ label{
+    top:0;
+    font-size: 13px;
+    padding: 0 10px;
+    background-color: white;
+  }
+   .contact-form textarea {
     width: 80%;
     padding: 0.5rem;
     margin-top: 0.5rem;

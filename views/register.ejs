@@ -23,20 +23,26 @@
               <h2>Create Your Account</h2>
               <p>Join Khaatabook and start managing your expenses today!</p>
               <form action="/registerUser" method="post" id="signup-form" autocomplete="off">
+                <div class="input-field">
+                  <input type="text" id="name" name="name" required>
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="username">Username</label>
+              </div>
+              <div class="input-field">
                 <input type="text" id="username" name="username" required>
-              
-                <label for="email">Email</label>
+                <label for="username">Username</label>
+              </div>
+              <div class="input-field">
                 <input type="email" id="email" name="email" required>
-              
-                <label for="password">Password</label>
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field">
                 <input type="password" id="password" name="password" required minlength="8">
-              
-                <label for="confirm-password">Confirm Password</label>
+                <label for="password">Password</label>
+              </div>
+              <div class="input-field">
                 <input type="password" id="confirm-password" name="confirm-password" required>
-              
+                <label for="confirm-password">Confirm Password</label>
+              </div>
                 
               
                 <button type="submit">Sign Up</button>
