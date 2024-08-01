@@ -6,7 +6,8 @@ const { default: mongoose } = require('mongoose');
 
 module.exports.createExpense = async function(req,res){
     let {description, amount, tags, category} = req.body;
-    let user = await userModel.findOne({email: req.user.email}).select("-password");
+    try {
+        let user = await userModel.findOne({email: req.user.email}).select("-password");
     let newExpense = await expenseModel.create({
         user: user._id,
         description,
@@ -19,5 +20,8 @@ module.exports.createExpense = async function(req,res){
     user.expenses.push(newExpense._id);
     await user.save();
 
-    res.send({user, newExpense})
+    res.send({user, newExpense});
+    } catch (error) {
+        res.send(error.messeage);
+    }
 }
