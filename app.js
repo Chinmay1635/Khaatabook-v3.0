@@ -9,7 +9,7 @@ require('dotenv').config();
 const db = require('./config/mongoose');
 const {userModel, userValidationSchema} = require('./models/user');
 const homeRoute = require('./routes/home');
-
+const expenseRoute = require('./routes/expenseRoute');
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
@@ -22,5 +22,7 @@ app.use(express.urlencoded({extended:true}));
 // });
 
 app.use('/', homeRoute);
+
+app.use('/', expenseRoute)
 
 app.listen(process.env.PORT || 3000);

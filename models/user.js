@@ -27,7 +27,10 @@ const userSchema = mongoose.Schema({
         required: true,
         minlength: 8
     },
-    expenses: []
+    expenses: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "expense"
+    }]
 });
 
 function userValidationSchema(data){
