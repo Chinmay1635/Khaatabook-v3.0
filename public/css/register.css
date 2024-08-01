@@ -136,7 +136,18 @@ body {
     background-color: white;
   }
   
-  
+  #passbtn{
+    position: absolute;
+    right: 10px;
+    top:-10%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #111;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
   
   .signup-container button {
     margin-top: 1rem;

@@ -103,19 +103,21 @@ body {
     padding: 0 10px;
     background-color: white;
   }
-  /* .login-container label {
-    width: 100%;
-    text-align: left;
-    margin-top: 1rem;
+ 
+
+  #passbtn{
+    position: absolute;
+    right: 10px;
+    top:-10%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #111;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
   }
   
-  .login-container input {
-    width: 100%;
-    padding: 0.75rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  } */
   
   .login-container button {
     margin-top: 1rem;
