@@ -30,7 +30,11 @@ const userSchema = mongoose.Schema({
     expenses: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "expense"
-    }]
+    }],
+    budget: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "budget",
+    },
 });
 
 function userValidationSchema(data){

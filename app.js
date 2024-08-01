@@ -10,6 +10,8 @@ const db = require('./config/mongoose');
 const {userModel, userValidationSchema} = require('./models/user');
 const homeRoute = require('./routes/home');
 const expenseRoute = require('./routes/expenseRoute');
+const budgetRoute = require('./routes/budgetRoute');
+
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
@@ -23,6 +25,8 @@ app.use(express.urlencoded({extended:true}));
 
 app.use('/', homeRoute);
 
-app.use('/', expenseRoute)
+app.use('/', expenseRoute);
+
+app.use('/', budgetRoute);
 
 app.listen(process.env.PORT || 3000);
