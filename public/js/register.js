@@ -68,4 +68,11 @@ document.getElementById('signup-form').addEventListener('submit', function(event
       showPasswordButton.innerHTML = `<i class="ri-eye-line"></i>`;
     }
   });
+
+  var typed = new Typed('.element', {
+    strings: ['Join Khaatabook and start managing your expenses today!'],
+    typeSpeed: 50,
+    
+    backDelay:1000,
+  });
   
