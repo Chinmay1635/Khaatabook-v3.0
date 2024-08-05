@@ -1,13 +1,13 @@
 
 ### 1. Models
 
-**User Model:**
+**User Model:**✅
 - Fields: `username`, `email`, `password`, `budget` (monthly, yearly).
 
-**Expense Model:**
+**Expense Model:**✅
 - Fields: `userId` (reference to User), `description`, `amount`, `category`, `tags`, `date`.
 
-**Budget Model:**
+**Budget Model:**✅
 - Fields: `userId` (reference to User), `monthlyBudget`, `yearlyBudget`.
 
 **Alert Model:**
@@ -15,12 +15,12 @@
 
 ### 2. Views
 
-**Landing Page:**
+**Landing Page:**✅
 - Hero section with app overview.
 - Features section explaining categorization, tags, budgeting, alerts, graphs, reports, and customization.
 - Call to action (CTA) buttons for signup and login.
 
-**Signup and Login Pages:**
+**Signup and Login Pages:**✅
 - Forms for user registration and authentication.
 
 **Dashboard:**
@@ -41,15 +41,15 @@
 
 ### 3. Controllers
 
-**Auth Controller:**
+**Auth Controller:**✅
 - Methods for user registration, login, and logout.
 
-**Expense Controller:**
+**Expense Controller:**✅
 - Methods for adding, updating, deleting, and fetching expenses.
 - Method for categorization and tagging of expenses.
 
 **Budget Controller:**
-- Methods for setting and fetching budgets.
+- Methods for setting and fetching budgets.✅
 - Method to check and trigger alerts when budget thresholds are exceeded.
 
 **Alert Controller:**
@@ -63,7 +63,7 @@
 
 ### 4. Routes
 
-**Auth Routes:**
+**Auth Routes:**✅
 - `GET /signup` – Render signup page.
 - `POST /signup` – Handle user registration.
 - `GET /login` – Render login page.
@@ -71,12 +71,12 @@
 - `GET /logout` – Handle user logout.
 
 **Expense Routes:**
-- `GET /expenses` – Render expense management page.
-- `POST /expenses` – Add a new expense.
+- `GET /expenses` – Render expense management page.✅
+- `POST /expenses` – Add a new expense.✅
 - `PUT /expenses/:id` – Update an expense.
 - `DELETE /expenses/:id` – Delete an expense.
 
-**Budget Routes:**
+**Budget Routes:**✅
 - `GET /budget` – Fetch user budget.
 - `POST /budget` – Set user budget.
 
