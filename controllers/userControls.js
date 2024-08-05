@@ -113,8 +113,15 @@ module.exports.userHome = async function(req,res){
         {$match: {user: new mongoose.Types.ObjectId(req.user._id)}}
     ]);
 
-    const monthlyBudget = budget[0].monthlyBudget;
-    const yearlyBudget = budget[0].yearlyBudget;
+    let monthlyBudget;
+    let yearlyBudget;
+    if(budget.length != 0){
+         monthlyBudget = budget[0].monthlyBudget;
+         yearlyBudget = budget[0].yearlyBudget;
+    }else{
+         monthlyBudget = 0;
+         yearlyBudget = 0;
+    }
     res.render("dashboard", {
         user:req.user,
         totalExpense: totalExpense.length > 0 ? totalExpense[0].total : 0  ,
