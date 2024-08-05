@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaatabook | Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="profile-display">
+            <div class="container">
+                <img id="profile-img" src="/images/profile.png" alt="profile-img">
+            <h4>Name: <%= user.name  %></h4>
+            <h6>Username: <%= user.username %></h6>
+            <a href="">My Profile</a>
+            <a href="/logout"><button class="btn">Log Out</button></a>
+            </div>
+        </div>
+        <nav>
+            <div id="left">
+                <div id="logo"><img src="/images/logo.png" alt="logo"></div>
+                <h1 class="logo-title">KHAATABOOK</h1>
+            </div>
+            <div id="center">
+                <h1>Dashboard - <span><%= user.name  %></span></h1>
+                
+            </div>
+            <div id="right">
+                <div id="profile">                   
+                    <img src="/images/profile.png" alt="profile-img">
+                </div>
+            </div>
+        </nav>
+
+        <div id="page1">
+            <div id="left">
+                <a href=""><button class="btn btn-2">Add Expense</button></a>
+                <div class="left-container" id="total-expenses">
+                    <h3><i class="ri-wallet-3-line"></i> Total Expenses</h3>
+                    <h5><svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="width:0.8em"> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#EAC749"></path><path d="M66 29.2H54.36c2.28 1.84 3.84 4.28 4.48 7.12h7.12v5.8h-7c-.96 6.76-5.88 10.6-10.6 11.68l11.12 18.68H47.4l-9.64-17.44h-7.88v-8.4h11.24c3.6 0 6.24-1.76 7.28-4.56H30v-5.8h18.6c-1.04-2.88-3.68-4.48-7.36-4.48H30v-8.4h36.04v5.72l-.04.08Z" fill="#276304"></path></svg> <%= totalExpense %></h5>
+                    <a href=""><button class="btn">View Expenses</button></a>
+                </div>
+                <div class="left-container" id="budget">
+                    <h3><img src="/images/budget.png" alt="budget-icon"> Monthly Budget</h3>
+                    <h5><svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="width:0.8em"> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#EAC749"></path><path d="M66 29.2H54.36c2.28 1.84 3.84 4.28 4.48 7.12h7.12v5.8h-7c-.96 6.76-5.88 10.6-10.6 11.68l11.12 18.68H47.4l-9.64-17.44h-7.88v-8.4h11.24c3.6 0 6.24-1.76 7.28-4.56H30v-5.8h18.6c-1.04-2.88-3.68-4.48-7.36-4.48H30v-8.4h36.04v5.72l-.04.08Z" fill="#276304"></path></svg> <%= monthlyBudget %></h5>
+                    <a href=""><button class="btn">View Budget</button></a>
+                </div>
+                <div class="left-container" id="budget">
+                    <h3><img src="/images/budget.png" alt="budget-icon"> Monthly Budget <span>(Comming Soon)</span></h3>
+                    <input type="range">
+                    <a href=""><button class="btn">Set Budget</button></a>
+                </div>
+            </div>
+            <div id="right">
+                <div style="width: 50%; margin-left: auto; margin-right: auto;">
+                    <canvas id="myPieChart"></canvas>
+                </div>
+                <button class="btn">View Report</button>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+        let categoryData = `<%- JSON.stringify(categoryExpense) %>`;
+        const categories = JSON.parse(categoryData)
+        
+
+        // categoryData.forEach((category) => {
+        //     console.log(category);
+        // });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    
+<!-- Scroll Trigger is needed for Scroll Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Three.js is needed for 3d Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+<!-- ControlKit is needed for Debug Panel -->
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

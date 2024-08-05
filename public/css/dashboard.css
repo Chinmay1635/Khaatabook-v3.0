@@ -1,0 +1,190 @@
+@font-face {
+    font-family: gilroy;
+    src: url(/fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+    font-family: gilroy-bold;
+    src: url(/fonts/Gilroy-ExtraBold.ttf);
+}
+
+html,body{
+width:100%;
+height:100%;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: gilroy;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    display: inline;
+    /* width: 35%; */
+}
+#main{
+    width: 100vw;
+}
+#profile-display{
+    position: absolute;
+    width: 20%;
+    padding: 1vw 2vw;
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 10px;
+    top:10.5vmin;
+    right: 20px;
+    display: none;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+#profile-display img{
+    width: 7vw;
+    border-radius: 50%;
+    border: 2px solid #0D8BFC;
+    cursor: pointer;
+    animation: colorChange 4s linear 0s infinite ;
+    
+}
+@keyframes colorChange {
+    0%{
+        filter: drop-shadow(0px 0px 8px red);
+    }
+    20%{
+        filter: drop-shadow(0px 0px 8px rgb(221, 255, 0));
+    }
+    40%{
+        filter: drop-shadow(0px 0px 8px rgb(0, 255, 17));
+    }
+    60%{
+        filter: drop-shadow(0px 0px 8px rgb(0, 234, 255));
+    }
+    80%{
+        filter: drop-shadow(0px 0px 8px rgb(255, 0, 217));
+    }
+    100%{
+        filter: drop-shadow(0px 0px 8px rgb(102, 0, 255));
+    }
+}
+#profile-display h4{
+    font-size: 1vmax;
+}
+#profile-display h6{
+    font-size: 0.8vmax;
+}
+.btn{
+    background-color: rgb(252, 7, 7);
+    display: block;
+    padding: 0.2vw 1vw;
+    border: none;
+    color:#ffffff;
+    border-radius: 100px;
+    font-weight: 900;
+    font-size: 1vw;
+    font-family: gilroy-bold;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    
+}
+.btn:hover{
+    background-color: rgba(252, 7, 7, 0.482);
+    color:white;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vmax 3vw;
+    /* position: fixed; */
+    background-color: #ffffffbd;
+}
+nav #left{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+#logo img{
+    width: 6vmax;
+}
+nav #left h1{
+    font-family: gilroy-bold;
+    color:#0D8BFC;
+    font-size: 2vw;
+}
+#center{
+    width: 30%;
+    
+}
+#center h1{
+    font-size: 2vw;
+}
+
+#profile{
+    width: 30%;
+}
+#profile img{
+    width: 4vw;
+    border-radius: 50%;
+    border: 2px solid #0D8BFC;
+    cursor: pointer;
+}
+
+#page1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    padding: 1vw 3vw;
+    background-color: #F5F5F5;
+}
+#page1 #left{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 3vw;
+}
+
+.btn-2{
+    background-color: #0D8BFC;
+}
+
+.left-container{
+    width: 100%;
+    /* height: 15vmin; */
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vw;
+}
+
+#page1 #left #total-expenses h3,#page1 #left #total-expenses h5,
+#page1 #left #total-expenses h3 i{
+    font-size: 1.4vw;
+    letter-spacing: 1px;
+}
+#page1 #left #budget h3,#page1 #left #budget h5,
+#page1 #left #budget h3 i{
+    font-size: 1.4vw;
+    letter-spacing: 1px;
+}
+#page1 #left #budget h3 img{
+    width: 1.4vw;
+}
+
+#page1 #right{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+}
