@@ -1,6 +1,9 @@
 const {userModel, userValidationSchema} = require('../models/user');
+const expenseModel = require('../models/expense')
+const budgetModel = require('../models/budget');
 const bcrypt = require('bcrypt');
 const generateToken = require('../utils/generateToken');
+const { default: mongoose } = require('mongoose');
 
 
 module.exports.registerUser = async function (req, res) {
@@ -90,9 +93,36 @@ module.exports.logoutUser = async function(req,res){
         secure: true,
     });
 
-    res.send("Loged out successfull");
+    res.redirect('/login');
 }
 module.exports.userHome = async function(req,res){
-    res.render("userHome", {user:req.user});
+
+    //Getting all expenses amount and summing it from expense model
+    const totalExpense = await expenseModel.aggregate([
+        {$match : {user : new mongoose.Types.ObjectId(req.user._id)}},
+        {$group : {_id:null, total:{$sum: "$amount"}}}
+    ])
+    const categoryExpense = await expenseModel.aggregate([
+        {$match : {user : new mongoose.Types.ObjectId(req.user._id)}},
+        {$group : {_id:"$category", total:{$sum: "$amount"}}}
+    ])
+   
+
+    //Getting budget related information from budget model
+    const budget = await budgetModel.aggregate([
+        {$match: {user: new mongoose.Types.ObjectId(req.user._id)}}
+    ]);
+
+    const monthlyBudget = budget[0].monthlyBudget;
+    const yearlyBudget = budget[0].yearlyBudget;
+    res.render("dashboard", {
+        user:req.user,
+        totalExpense: totalExpense.length > 0 ? totalExpense[0].total : 0  ,
+        monthlyBudget,
+        yearlyBudget,
+        categoryExpense,
+        
+    });
+  
 }
 
