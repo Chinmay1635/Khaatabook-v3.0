@@ -1,139 +1,152 @@
+# Khaatabook
 
-### 1. Models
+![Khaatabook Logo](path-to-your-logo.png)
 
-**User Model:**✅
-- Fields: `username`, `email`, `password`, `budget` (monthly, yearly).
+## Tech Stacks Used
 
-**Expense Model:**✅
-- Fields: `userId` (reference to User), `description`, `amount`, `category`, `tags`, `date`.
+- **Backend**:
+  ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+- **Database**:
+  ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+  ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)
+- **Frontend**:
+  ![EJS](https://img.shields.io/badge/EJS-8BC34A?style=for-the-badge&logo=javascript&logoColor=white)
+  ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- **Authentication**:
+  ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+- **Charts**:
+  ![Chart.js](https://img.shields.io/badge/Chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white)
 
-**Budget Model:**✅
-- Fields: `userId` (reference to User), `monthlyBudget`, `yearlyBudget`.
+## Introduction
 
-**Alert Model:**
-- Fields: `userId` (reference to User), `type` (budget, etc.), `threshold`, `active`.
+Khaatabook is a comprehensive expense management application designed to help users keep track of their financial transactions effortlessly. This project allows users to add, categorize, and monitor their expenses, set budgets, and receive alerts when budgets are exceeded. The application also provides insightful graphs and reports to help users better understand their spending habits. Built using EJS for templating and MongoDB for data management, Khaatabook aims to make expense tracking easy and intuitive.
 
-### 2. Views
+## Features
 
-**Landing Page:**✅
-- Hero section with app overview.
-- Features section explaining categorization, tags, budgeting, alerts, graphs, reports, and customization.
-- Call to action (CTA) buttons for signup and login.
+1. **Categorization and Tags**: Users can categorize their expenses into predefined categories and add tags for better organization.
+2. **Budgeting and Alerts**: Set budgets for different categories and receive alerts when spending exceeds the set budget.
+3. **Graphs and Reports**: Visual representations of expenses through graphs and detailed reports to understand spending patterns.
+4. **User Profile and Customization**: Users can customize their profiles and settings according to their preferences.
+5. **Expense Tracking**: Easily add, edit, and delete expenses with a user-friendly interface.
 
-**Signup and Login Pages:**✅
-- Forms for user registration and authentication.
+## Project Structure
 
-**Dashboard:**✅
-- Overview of user’s expenses.
-- Budget summary and alerts.
-- Quick links to add new expenses, view reports, and customize profile.
+### Models
 
-**Expense Management:**
-- Form to add new expense.
-- List of expenses with options to filter by category, tags, and date.
+#### User Model
 
-**Reports:**
-- Visual representation of expenses using graphs (pie charts, bar charts, line charts).
-- Filter options to view reports by month, year, category, and tags.
+- **username**: Unique identifier for the user.
+- **name**: Full name of the user.
+- **email**: Email address of the user, used for login and notifications.
+- **password**: Encrypted password for user authentication.
+- **expenses**: Array of references to the user's expenses.
+- **budget**: Reference to the user's budget settings.
 
-**User Profile:**
-- Form to update user details and customization settings (theme, language).
+#### Expense Model
 
-### 3. Controllers
+- **user**: Reference to the user who created the expense.
+- **description**: Description of the expense.
+- **amount**: Amount spent.
+- **category**: Category of the expense (e.g., Food, Transportation).
+- **tags**: Tags for better organization of expenses.
+- **date**: Date when the expense was made.
 
-**Auth Controller:**✅
-- Methods for user registration, login, and logout.
+#### Budget Model
 
-**Expense Controller:**✅
-- Methods for adding, updating, deleting, and fetching expenses.
-- Method for categorization and tagging of expenses.
+- **userId**: Reference to the user.
+- **category**: Category for which the budget is set.
+- **amount**: Budget amount.
+- **alerts**: Array of alert settings related to the budget.
 
-**Budget Controller:**
-- Methods for setting and fetching budgets.✅
-- Method to check and trigger alerts when budget thresholds are exceeded.
+#### Alert Model
 
-**Alert Controller:**
-- Methods to create, fetch, and manage alerts.
+- **userId**: Reference to the user.
+- **type**: Type of alert (e.g., budget).
+- **threshold**: Threshold for triggering the alert.
+- **active**: Boolean indicating if the alert is active.
 
-**Report Controller:**
-- Methods to generate data for different types of graphs and reports.
+### Views
 
-**Profile Controller:**
-- Methods to update user profile and customization settings.
+The project uses EJS for rendering HTML views. The main views include:
 
-### 4. Routes
+1. **Dashboard**: Overview of user’s expenses, budget summary, and alerts. Includes quick links to add new expenses, view reports, and customize profile.
+2. **Expense Management**: Form to add new expenses with fields for description, amount, category, and tags.
+3. **Graphs and Reports**: Visual representations of expenses using pie charts and other graphical formats.
 
-**Auth Routes:**✅
-- `GET /signup` – Render signup page.
-- `POST /signup` – Handle user registration.
-- `GET /login` – Render login page.
-- `POST /login` – Handle user login.
-- `GET /logout` – Handle user logout.
+### Controllers
 
-**Expense Routes:**
-- `GET /expenses` – Render expense management page.✅
-- `POST /expenses` – Add a new expense.✅
-- `PUT /expenses/:id` – Update an expense.
-- `DELETE /expenses/:id` – Delete an expense.
+The controllers manage the application's logic and handle requests and responses:
 
-**Budget Routes:**✅
-- `GET /budget` – Fetch user budget.
-- `POST /budget` – Set user budget.
+- **User Controls**: Handle user authentication, profile management, and fetching user-related data.
+- **Expense Controls**: Manage expense creation, updating, and deletion.
+- **Budget Controls**: Handle budget settings and alert management.
 
-**Alert Routes:**
-- `GET /alerts` – Fetch user alerts.
-- `POST /alerts` – Create a new alert.
-- `PUT /alerts/:id` – Update an alert.
-- `DELETE /alerts/:id` – Delete an alert.
+### Middleware
 
-**Report Routes:**
-- `GET /reports` – Render reports page.
-- `GET /reports/data` – Fetch data for reports.
+The project includes middleware for user authentication to ensure that only authenticated users can access certain routes.
 
-**Profile Routes:**
-- `GET /profile` – Render user profile page.
-- `POST /profile` – Update user profile.
+## Installation and Setup
 
-### 5. Interaction Flow
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/yourusername/khaatabook.git
+    ```
 
-**User Flow:**
-1. **Signup/Login:**
-   - User registers or logs in.
-   - User data is stored and session is created.
+2. **Install Dependencies**:
+    ```bash
+    cd khaatabook
+    npm install
+    ```
 
-2. **Dashboard:**
-   - User views an overview of expenses and budget status.
-   - Quick links to various features (add expense, view reports, update profile).
+3. **Configure Environment Variables**:
+    Create a `.env` file in the root directory and add your MongoDB URI and other necessary environment variables:
+    ```env
+    MONGODB_URI=your_mongodb_uri
+    SECRET_KEY=your_secret_key
+    ```
 
-3. **Expense Management:**
-   - User adds or updates expenses with categories and tags.
-   - User views and filters the list of expenses.
+4. **Run the Application**:
+    ```bash
+    npm start
+    ```
 
-4. **Budgeting and Alerts:**
-   - User sets monthly and yearly budgets.
-   - System checks expenses against budget and triggers alerts if thresholds are exceeded.
+5. **Access the Application**:
+    Open your browser and navigate to `http://localhost:3000`.
 
-5. **Reports:**
-   - User generates and views visual reports (graphs) on expenses.
-   - User filters reports by various parameters (date, category, tags).
+## Usage
 
-6. **Profile Customization:**
-   - User updates personal information and customization settings (theme, language).
+1. **Register and Login**: Users can register a new account or log in to an existing account.
+2. **Dashboard**: View an overview of expenses, budgets, and alerts.
+3. **Add Expense**: Navigate to the expense management page to add new expenses.
+4. **Set Budget**: Define budgets for different categories and set up alerts.
+5. **View Reports**: Access detailed reports and visualizations of your spending patterns.
 
-### 6. Visual Design
+## Contributing
 
-**Dashboard:**
-- Summary cards for total expenses, remaining budget, and alerts.
-- Graphical representation of expenses.
+We welcome contributions to improve Khaatabook. To contribute, follow these steps:
 
-**Expense Management:**
-- Form with fields for description, amount, category, tags, and date.
-- List view with filters and search functionality.
+1. Fork the repository.
+2. Create a new branch.
+    ```bash
+    git checkout -b feature-branch
+    ```
+3. Make your changes and commit them.
+    ```bash
+    git commit -m "Add new feature"
+    ```
+4. Push to the branch.
+    ```bash
+    git push origin feature-branch
+    ```
+5. Create a pull request on GitHub.
 
-**Reports:**
-- Section with different types of graphs (pie, bar, line).
-- Filter panel to customize the report view.
+## License
 
-**Profile:**
-- Form with fields for updating username, email, password, and customization options.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+---
+
+Thank you for using Khaatabook! If you have any questions or need further assistance, feel free to open an issue or contact us.
