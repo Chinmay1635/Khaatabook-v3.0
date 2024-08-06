@@ -9,6 +9,11 @@ router.get("/expenses", function(req,res){
     res.render("expenses");
 });
 
+router.get("/:username/create-new", function(req,res){
+
+    res.render('expenseCreate',);
+})
+
 router.post("/expenses", isLoggedIn, createExpense);
 
 

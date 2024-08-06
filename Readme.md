@@ -23,7 +23,7 @@
 **Signup and Login Pages:**✅
 - Forms for user registration and authentication.
 
-**Dashboard:**
+**Dashboard:**✅
 - Overview of user’s expenses.
 - Budget summary and alerts.
 - Quick links to add new expenses, view reports, and customize profile.

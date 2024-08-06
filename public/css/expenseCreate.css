@@ -1,0 +1,163 @@
+@font-face {
+    font-family: gilroy;
+    src: url(/fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+    font-family: gilroy-bold;
+    src: url(/fonts/Gilroy-ExtraBold.ttf);
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow-x: hidden;
+
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: gilroy;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    display: inline;
+}
+#main{
+    width: 100vw;
+}
+
+
+
+.btn{
+    background-color: rgb(252, 7, 7);
+    display: block;
+    padding: 0.2vw 1vw;
+    border: none;
+    color:#ffffff;
+    border-radius: 100px;
+    font-weight: 900;
+    font-size: 1vw;
+    font-family: gilroy-bold;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    
+}
+.btn:hover{
+    background-color:#0D8BFC;
+    color:white;
+}
+.btn-2{
+    margin-top: 1rem;
+    background-color: #0D8BFC;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vmax 3vw;
+
+    background-color: #ffffffbd;
+}
+nav #left{
+    display: flex;
+    align-items: center;
+    
+}
+#logo img{
+    width: 6vmax;
+}
+nav #left h1{
+    font-family: gilroy-bold;
+    color:#0D8BFC;
+    font-size: 2vw;
+}
+nav #right{
+    display: flex;
+    gap: 1vw;
+}
+  
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px);
+  }
+
+.expense-container {
+    background: #f2f2f2b6;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width:50%;
+  }
+  
+  .expense-container h1 {
+    margin-bottom: 1rem;
+    font-size: 3vw;
+  }
+  
+  
+  
+  .expense-container form {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 2vw; */
+    align-items: center;
+  
+  }
+
+.input-field{
+    position:relative;
+    margin-top: 1rem;
+  }
+  .input-field input{
+    width: 20vmax;
+    height: 3vmax;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 2px solid #9c9797;
+    background: transparent;
+    outline: none;
+    color: #111;
+    /* pointer-events: none; */
+  }
+  .input-field label{
+    position: absolute;
+    top: 50%;
+    left:15px;
+    transform: translateY(-50%);
+    background-color: #f2f2f2b6;
+    color: #111;
+    font-size: 16px;
+    transition: all linear .3s;
+  }
+  input:focus{
+    border: 2px solid rgb(12, 244, 12);
+  }
+  input:focus ~ label,
+  input:valid ~ label{
+    top:0;
+    font-size: 13px;
+    padding: 0 10px;
+    background-color: white;
+  }
+
+  .select{
+    width: 20vmax;
+    height: 3vmax;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 2px solid #9c9797;
+    background: transparent;
+    outline: none;
+    color: #111;
+    margin-top: 1rem;
+  }

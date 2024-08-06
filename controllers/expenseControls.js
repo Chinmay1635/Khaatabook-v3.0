@@ -20,7 +20,7 @@ module.exports.createExpense = async function(req,res){
     user.expenses.push(newExpense._id);
     await user.save();
 
-    res.send({user, newExpense});
+    res.redirect('/home');
     } catch (error) {
         res.send(error.messeage);
     }

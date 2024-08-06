@@ -23,6 +23,6 @@ router.post("/loginuser", loginUser);
 
 router.get("/logout", logoutUser);
 
-router.get("/home/:username",isLoggedIn, userHome);
+router.get("/home",isLoggedIn, userHome);
 
 module.exports = router;

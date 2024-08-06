@@ -45,7 +45,7 @@ module.exports.registerUser = async function (req, res) {
         });
 
 
-        res.redirect(`/home/${username}`);
+        res.redirect(`/home/`);
     } catch (error) {
         res.send(error.message);
     }
@@ -75,7 +75,7 @@ module.exports.loginUser = async function (req, res) {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
             });
 
-        res.redirect(`/home/${user.username}`);
+        res.redirect(`/home/`);
             
 
         } else {
