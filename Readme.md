@@ -17,6 +17,9 @@
   ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 - **Authentication**:
   ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+  ![bcrypt](https://img.shields.io/badge/bcrypt-3B5998?style=for-the-badge&logo=none&logoColor=white)
+  ![joi](https://img.shields.io/badge/Joi-3766AB?style=for-the-badge&logo=none&logoColor=white)
+  ![dotenv](https://img.shields.io/badge/dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black)
 - **Charts**:
   ![Chart.js](https://img.shields.io/badge/Chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white)
 
