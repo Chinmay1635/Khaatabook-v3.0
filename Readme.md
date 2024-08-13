@@ -1,6 +1,9 @@
 # Khaatabook
 
-![Khaatabook Logo](public/images/logo.png)
+## Live Demo (40-50% Completed)
+
+You can view a live demo of the Khaatabook application here:
+[Live Demo Link](https://khaatabook-test.vercel.app/)
 
 ## Tech Stacks Used
 
