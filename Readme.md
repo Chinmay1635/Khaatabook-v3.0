@@ -130,29 +130,6 @@ The project includes middleware for user authentication to ensure that only auth
 4. **Set Budget**: Define budgets for different categories and set up alerts.
 5. **View Reports**: Access detailed reports and visualizations of your spending patterns.
 
-## Contributing
-
-We welcome contributions to improve Khaatabook. To contribute, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch.
-    ```bash
-    git checkout -b feature-branch
-    ```
-3. Make your changes and commit them.
-    ```bash
-    git commit -m "Add new feature"
-    ```
-4. Push to the branch.
-    ```bash
-    git push origin feature-branch
-    ```
-5. Create a pull request on GitHub.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ---
 
 Thank you for using Khaatabook! If you have any questions or need further assistance, feel free to open an issue or contact us.
