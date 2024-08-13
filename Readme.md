@@ -1,6 +1,6 @@
 # Khaatabook
 
-![Khaatabook Logo](path-to-your-logo.png)
+![Khaatabook Logo](public/images/logo.png)
 
 ## Tech Stacks Used
 
