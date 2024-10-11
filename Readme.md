@@ -1,6 +1,6 @@
 # Khaatabook
 
-## Live Demo (40-50% Completed)
+## Live Demo
 
 You can view a live demo of the Khaatabook application here:
 [Live Demo Link](https://khaatabook-test.vercel.app/)
@@ -28,7 +28,7 @@ You can view a live demo of the Khaatabook application here:
 
 ## Introduction
 
-Khaatabook is a comprehensive expense management application designed to help users keep track of their financial transactions effortlessly. This project allows users to add, categorize, and monitor their expenses, set budgets, and receive alerts when budgets are exceeded. The application also provides insightful graphs and reports to help users better understand their spending habits. Built using EJS for templating and MongoDB for data management, Khaatabook aims to make expense tracking easy and intuitive.
+Khaatabook is a expense management application designed to help users keep track of their financial transactions effortlessly. This project allows users to add, categorize, and monitor their expenses, set budgets, and receive alerts when budgets are exceeded. The application also provides insightful graphs and reports to help users better understand their spending habits. Built using EJS for templating and MongoDB for data management, Khaatabook aims to make expense tracking easy and intuitive.
 
 ## Features
 
@@ -98,7 +98,7 @@ The project includes middleware for user authentication to ensure that only auth
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/khaatabook.git
+    git clone https://github.com/Chinmay1635/Khaatabook-v3.0.git
     ```
 
 2. **Install Dependencies**:
